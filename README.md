@@ -8,7 +8,7 @@ The overall is using npm
 
 ## Installation
 
-`npm install`
+Clone the repository, then run `npm install`
 
 ## Usage
 
@@ -38,3 +38,11 @@ Every `.scss`, `.sass` or `.css` files can be imported into `src/app.js`. Those 
 ### Javascript
 
 `src/app.js` will be bundled and "Babel'ised" into `dist/js/bundle.js`. Therefore, you should put your JavaScript into `src/js` and import it into `src/app.js`.
+
+### NPM scripts
+
+Use `npm run watch` to compile everything on the fly
+
+Use `npm run preview` to run a live-server auto-refreshing on every save
+
+Use `npm run build` to build your app for production
