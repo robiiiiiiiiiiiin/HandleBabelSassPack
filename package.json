@@ -2,6 +2,8 @@
   "name": "HandleBabelSassPack",
   "version": "1.0.0",
   "description": "Pre-maid architecture and configuration to develop using Webpack, Babel, Sass and Handlebars.",
+  "author": "Robin Bécherraz",
+  "license": "ISC",
   "repository": {
     "type": "git",
     "url": "git://github.com/robiiiiiiiiiiiin/HandleBabelSassPack"
@@ -12,8 +14,6 @@
     "watch": "webpack --mode=development --env.NODE_ENV=development --watch --devtool eval-source-map",
     "preview": "live-server dist/"
   },
-  "author": "Robin Bécherraz",
-  "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.11.6",
     "@babel/preset-env": "^7.11.5",
