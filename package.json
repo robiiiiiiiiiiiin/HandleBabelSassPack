@@ -1,5 +1,5 @@
 {
-  "name": "HandleBabelSassPack",
+  "name": "handlebabelsasspack",
   "version": "1.0.0",
   "description": "Pre-maid architecture and configuration to develop using Webpack, Babel, Sass and Handlebars.",
   "author": "Robin Bécherraz",
