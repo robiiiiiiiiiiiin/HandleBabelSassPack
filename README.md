@@ -10,6 +10,8 @@ The overall is using npm
 
 Clone the repository, then run `npm install`
 
+Then you should change the name, version, description, repository and author in package.json
+
 ## Usage
 
 ### HTML / Handlebars
