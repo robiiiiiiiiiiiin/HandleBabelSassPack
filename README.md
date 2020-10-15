@@ -16,7 +16,7 @@ Then you should change the name, version, description, repository and author in 
 
 You can use handlebars normally using `.hbs` extension.
 
-On top of that, this configuration uses [handlebars-webpack-plugin](https://github.com/sagold/handlebars-webpack-plugin). This lets you split your html files into multiple files or templates using handlebars' partials, and it will be rendered on Webpack's build.
+On top of that, this configuration uses [handlebars-webpack-plugin](https://github.com/sagold/handlebars-webpack-plugin). This lets you split your html files into multiple files or templates using handlebars' partials, and it will be rendered at Webpack's build.
 
 every `.hbs` file under `src/html` directory will be compiled separately into `dist/samePath/sameName.html`.
 
