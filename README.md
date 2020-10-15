@@ -37,7 +37,7 @@ You can pass data to a partial like so:
 {{> pathto/myPartial key=value key2=value}}
 ```
 
-Or you can pass your data using a `.json` file
+Or you can pass data using a `.json` file.
 To do so, you must add your json file's path into webpack.config.js like so
 ```
 data: require("./src/data/myData.json"),
