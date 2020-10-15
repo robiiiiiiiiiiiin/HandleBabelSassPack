@@ -1,7 +1,7 @@
 {
   "name": "handlebabelsasspack",
   "version": "1.0.0",
-  "description": "Pre-maid frontend developement environment setup using Webpack, Babel, Sass and Handlebars.",
+  "description": "Frontend developement environment setup using Webpack, Babel, Sass and Handlebars.",
   "author": "Robin Bécherraz",
   "license": "ISC",
   "repository": {
