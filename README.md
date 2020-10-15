@@ -2,9 +2,7 @@
 
 (Sorry, I didn't find a better name)
 
-HandleBabelSassPack is a pre-maid architecture and configuration to develop using Webpack, Babel, Sass and Handlebars.
-
-The overall is using npm
+HandleBabelSassPack is a frontend developement environment setup using Webpack, Babel, Sass and Handlebars.
 
 ## Installation
 
@@ -18,20 +16,11 @@ Then you should change the name, version, description, repository and author in 
 
 You can use handlebars normally using `.hbs` extension.
 
-On top of that, this configuration uses [handlebars-webpack-plugin](https://github.com/sagold/handlebars-webpack-plugin). This lets you separate your html files into multiple files using handlebars' partials, and it will be rendered on Webpack's build.
+On top of that, this configuration uses [handlebars-webpack-plugin](https://github.com/sagold/handlebars-webpack-plugin). This lets you split your html files into multiple files or templates using handlebars' partials, and it will be rendered on Webpack's build.
 
-every `.hbs` file directly under `src/` directory will be compiled separately into `dist/sameName.html`.
+every `.hbs` file under `src/html` directory will be compiled separately into `dist/samePath/sameName.html`.
 
-The `.hbs` files under `src/partials` can be imported into `src/*.hbs` files as partials. You can add one level of directory to `src/partials`, but if you add two levels or more, you'll have to adapt this part of the configuration into `webpack.config.js`
-
-```
-// In your .hbs files, you must import partial with only firstParent/filename
-// You need to add a line for each folder level
-partials: [
-path.join(process.cwd(), "src", "partials", "*.hbs"),
-path.join(process.cwd(), "src", "partials", "*", "*.hbs")
-],
-```
+The `.hbs` files under `src/partials` can be imported into `.hbs` files as partials.
 
 ### CSS / Sass
 
@@ -39,7 +28,25 @@ Every `.scss`, `.sass` or `.css` files can be imported into `src/app.js`. Those 
 
 ### Javascript
 
-`src/app.js` will be bundled and "Babel'ised" into `dist/js/bundle.js`. Therefore, you should put your JavaScript into `src/js` and import it into `src/app.js`.
+`src/app.js` will be bundled and "Babelised" into `dist/js/bundle.js`. Therefore, you should put your JavaScript into `src/js` and import it into `src/app.js`.
+
+### Pass data to handlebars template/partial
+
+You can pass data to a partial like so:
+```
+{{> pathto/myPartial key=value key2=value}}
+```
+
+Or you can pass your data using a `.json` file
+To do so, you must add your json file's path into webpack.config.js like so
+```
+data: require("./src/data/myData.json"),
+data: path.join(__dirname, "src/data/myData.json"),
+```
+Then, you can pass this json file into your partial like that
+```
+{{> partials/myPartial data=myData}}
+```
 
 ### NPM scripts
 
