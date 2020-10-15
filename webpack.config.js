@@ -56,21 +56,24 @@ module.exports = {
     new HandlebarsPlugin({
       // doc: https://github.com/sagold/handlebars-webpack-plugin
 
-      entry: path.join(process.cwd(), "src", "*.hbs"),
-      output: path.join(process.cwd(), "dist", "[name].html"),
+      entry: path.join(process.cwd(), "src", "html", "**", "*.hbs"),
+      output: path.join(process.cwd(), "dist", "[path]", "[name].html"),
 
+      // Path to your partials
       // In your .hbs files, you must import partial with only firstParent/filename
-      // You need to add a line for each folder level
       partials: [
-        path.join(process.cwd(), "src", "partials", "*.hbs"),
-        path.join(process.cwd(), "src", "partials", "*", "*.hbs")
+        path.join(process.cwd(), "src", "partials", "**", "*.hbs")
       ],
 
       // register custom helpers. May be either a function or a glob-pattern
       helpers: {
         nameOfHbsHelper: Function.prototype,
-        projectHelpers: path.join(process.cwd(), "src", "helpers", "*.helper.js")
+        projectHelpers: path.join(process.cwd(), "src", "helpers", "**", "*.helper.js")
       },
+
+      // data passed to main hbs template: `main-template(data)`
+      //data: require("./src/data/projects.json"),
+      //data: path.join(__dirname, "src/data/projects.json"),
 
       // hooks
       // getTargetFilepath: function (filepath, outputTemplate) {},
